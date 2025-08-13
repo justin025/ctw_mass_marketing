@@ -8,7 +8,7 @@ import requests
 from PyQt6 import uic, QtGui
 from PyQt6.QtCore import QThread, QDir, Qt, pyqtSignal, QObject, QTimer
 from PyQt6.QtGui import QIcon, QColor
-from PyQt6.QtWidgets import QApplication, QMainWindow, QHeaderView, QLabel, QPushButton, QProgressBar, QTableWidgetItem, QFileDialog, QRadioButton, QHBoxLayout, QWidget, QColorDialog
+from PyQt6.QtWidgets import QApplication, QMainWindow, QHeaderView, QLabel, QPushButton, QProgressBar, QTableWidgetItem, QFileDialog, QRadioButton, QHBoxLayout, QWidget, QColorDialog, QMessageBox
 
 class MainWindow(QMainWindow):
 
@@ -18,7 +18,8 @@ class MainWindow(QMainWindow):
         self.icon_cache = {}
         QApplication.setStyle("fusion")
         uic.loadUi(os.path.join(self.path, "qtui", "main.ui"), self)
-        self.setWindowIcon(self.get_icon('onthespot'))
+        self.setWindowIcon(self.get_icon('ringcentral_mass_sms'))
+
         #self.centralwidget.setStyleSheet("background-color: #282828; color: white;")
         self.btn_save_config.setIcon(self.get_icon('save'))
         self.toggle_theme_button.setIcon(self.get_icon('light'))
@@ -171,3 +172,9 @@ class MainWindow(QMainWindow):
 
         print(response.status_code)
         print(response.json())
+
+        if response.status_code != 200:
+            msg = QMessageBox(self)
+            msg.setWindowTitle("ERROR response.status_code")
+            msg.setText(f"Report the following to your administrator: {response.json()}")
+            msg.show()

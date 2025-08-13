@@ -33,7 +33,6 @@ pyinstaller --onefile --noconsole --noconfirm ^
     --add-data="src/ringcentral_mass_sms/resources/icons/*.png;ringcentral_mass_sms/resources/icons" ^
     --paths="src/ringcentral_mass_sms" ^
     --name="ringcentral_mass_sms" ^
-    --icon="src/ringcentral_mass_sms/resources/icons/ringcentral_mass_sms.png" ^
     src\portable.py
 
 
