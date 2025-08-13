@@ -29,8 +29,8 @@ jobs:
       - name: Upload Windows Executable
         uses: actions/upload-artifact@v4
         with:
-          name: OnTheSpot-x86_64.exe
-          path: dist/OnTheSpot.exe
+          name: ringcentral_mass_sms-x86_64.exe
+          path: dist/ringcentral_mass_sms.exe
 
       - name: Upload to Release (Windows)
         if: github.event_name == 'release'
@@ -39,8 +39,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: dist/OnTheSpot.exe
-          asset_name: OnTheSpot-x86_64.exe
+          asset_path: dist/ringcentral_mass_sms.exe
+          asset_name: ringcentral_mass_sms-x86_64.exe
           asset_content_type: application/octet-stream
 
   macos-x86_64-build:
@@ -56,8 +56,8 @@ jobs:
       - name: Upload macOS DMG
         uses: actions/upload-artifact@v4
         with:
-          name: OnTheSpot-x86_64.dmg
-          path: dist/OnTheSpot.dmg
+          name: ringcentral_mass_sms-x86_64.dmg
+          path: dist/ringcentral_mass_sms.dmg
 
       - name: Upload to Release (macOS)
         if: github.event_name == 'release'
@@ -66,8 +66,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: dist/OnTheSpot.dmg
-          asset_name: OnTheSpot-x86_64.dmg
+          asset_path: dist/ringcentral_mass_sms.dmg
+          asset_name: ringcentral_mass_sms-x86_64.dmg
           asset_content_type: application/x-apple-diskimage
 
   macos-arm64-build:
@@ -83,8 +83,8 @@ jobs:
       - name: Upload macOS DMG
         uses: actions/upload-artifact@v4
         with:
-          name: OnTheSpot-arm64.dmg
-          path: dist/OnTheSpot.dmg
+          name: ringcentral_mass_sms-arm64.dmg
+          path: dist/ringcentral_mass_sms.dmg
 
       - name: Upload to Release (macOS)
         if: github.event_name == 'release'
@@ -93,8 +93,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: dist/OnTheSpot.dmg
-          asset_name: OnTheSpot-arm64.dmg
+          asset_path: dist/ringcentral_mass_sms.dmg
+          asset_name: ringcentral_mass_sms-arm64.dmg
           asset_content_type: application/x-apple-diskimage
 
   linux-x86_64-build:
@@ -115,8 +115,8 @@ jobs:
       - name: Upload Linux Executable
         uses: actions/upload-artifact@v4
         with:
-          name: OnTheSpot-x86_64.tar.gz
-          path: dist/OnTheSpot.tar.gz
+          name: ringcentral_mass_sms-x86_64.tar.gz
+          path: dist/ringcentral_mass_sms.tar.gz
 
       - name: Upload to Release (Linux)
         if: github.event_name == 'release'
@@ -125,8 +125,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: dist/OnTheSpot.tar.gz
-          asset_name: OnTheSpot-x86_64.tar.gz
+          asset_path: dist/ringcentral_mass_sms.tar.gz
+          asset_name: ringcentral_mass_sms-x86_64.tar.gz
           asset_content_type: application/gzip
 
   appimage-x86_64-build:
@@ -147,8 +147,8 @@ jobs:
       - name: Upload AppImage Executable
         uses: actions/upload-artifact@v4
         with:
-          name: OnTheSpot-x86_64.AppImage
-          path: dist/OnTheSpot-x86_64.AppImage
+          name: ringcentral_mass_sms-x86_64.AppImage
+          path: dist/ringcentral_mass_sms-x86_64.AppImage
 
       - name: Upload to Release (AppImage)
         if: github.event_name == 'release'
@@ -157,6 +157,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: dist/OnTheSpot-x86_64.AppImage
-          asset_name: OnTheSpot-x86_64.AppImage
+          asset_path: dist/ringcentral_mass_sms-x86_64.AppImage
+          asset_name: ringcentral_mass_sms-x86_64.AppImage
           asset_content_type: application/octet-stream
