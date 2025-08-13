@@ -7,11 +7,11 @@ if /i "%FOLDER_NAME%"=="scripts" (
     cd ..
 )
 
-echo ========= OnTheSpot Windows Build Script =========
+echo ========= ringcentral_mass_sms Windows Build Script =========
 
 
 echo =^> Cleaning up previous builds...
-del /F /Q /A dist\onthespot_win_executable.exe
+del /F /Q /A dist\ringcentral_mass_sms_win_executable.exe
 
 
 echo =^> Creating virtual environment...
@@ -27,23 +27,13 @@ python -m pip install --upgrade pip wheel pyinstaller
 pip install -r requirements.txt
 
 
-echo =^> Downloading FFmpeg binary...
-mkdir build
-curl -L -o build\ffmpeg.zip https://github.com/GyanD/codexffmpeg/releases/download/7.1/ffmpeg-7.1-essentials_build.zip
-powershell -Command "Expand-Archive -Path build\ffmpeg.zip -DestinationPath build\ffmpeg"
-
-
 echo =^> Running PyInstaller to create .exe package...
 pyinstaller --onefile --noconsole --noconfirm ^
-    --hidden-import="zeroconf._utils.ipaddress" ^
-    --hidden-import="zeroconf._handlers.answers" ^
-    --add-data="src/onthespot/resources/translations/*.qm;onthespot/resources/translations" ^
-    --add-data="src/onthespot/qt/qtui/*.ui;onthespot/qt/qtui" ^
-    --add-data="src/onthespot/resources/icons/*.png;onthespot/resources/icons" ^
-    --add-binary="build/ffmpeg/ffmpeg-7.1-essentials_build/bin/ffmpeg.exe;onthespot/bin/ffmpeg" ^
-    --paths="src/onthespot" ^
-    --name="OnTheSpot" ^
-    --icon="src/onthespot/resources/icons/onthespot.png" ^
+    --add-data="src/ringcentral_mass_sms/qt/qtui/*.ui;ringcentral_mass_sms/qt/qtui" ^
+    --add-data="src/ringcentral_mass_sms/resources/icons/*.png;ringcentral_mass_sms/resources/icons" ^
+    --paths="src/ringcentral_mass_sms" ^
+    --name="ringcentral_mass_sms" ^
+    --icon="src/ringcentral_mass_sms/resources/icons/ringcentral_mass_sms.png" ^
     src\portable.py
 
 
@@ -52,4 +42,4 @@ del /F /Q *.spec
 rmdir /s /q build __pycache__ ffbin_win venvwin
 
 
-echo =^> Done! Executable available as 'dist/OnTheSpot.exe'.
+echo =^> Done! Executable available as 'dist/ringcentral_mass_sms.exe'.
