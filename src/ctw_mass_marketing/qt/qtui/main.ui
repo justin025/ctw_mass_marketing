@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>712</width>
-    <height>541</height>
+    <width>795</width>
+    <height>596</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,7 +18,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../../../../../../../../../../../../../../resources/icon.png</normaloff>../../../../../../../../../../../../../../resources/icon.png</iconset>
+    <normaloff>../../../../../../../../../../../../../../../../../../../../resources/icon.png</normaloff>../../../../../../../../../../../../../../../../../../../../resources/icon.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">QGroupBox #group_login_form_3, #gb0_0, #gb0_1, #gb0_2, #gb0_3, #gb0_4, #gb0_5, #gb0_6, #gb0_7, #gb1_0, #gb1_1, #gb1_2, #gb1_3, #gb1_4, #gb1_5, #gb1_6, #gb1_7, #gb1_8, #gb1_9, #gb1_10, #gb1_11, #gb1_12, #gb1_13, #gb1_14, #gb1_29, #gb2_0, #gb2_1, #gb2_2, #gb2_3, #gb2_4, #gb2_5, #gb2_6, #gb2_7, #gb2_8, #gb2_9, #gb2_10, #gb2_11, #gb2_12, #gb2_13, #gb2_14, #gb2_15, #gb2_16, #gb2_17, #gb2_18, #gb3_0, #gb3_1, #gb3_2, #gb3_3, #gb3_4, #gb3_5, #gb3_6 { border: 0;}</string>
@@ -173,7 +173,7 @@
             <number>0</number>
            </property>
            <item>
-            <widget class="QTableWidget" name="tableWidget">
+            <widget class="QTableWidget" name="csv_table">
              <property name="lineWidth">
               <number>1</number>
              </property>
@@ -202,7 +202,7 @@
              </column>
              <column>
               <property name="text">
-               <string>Phone Number (999-999-9999)</string>
+               <string>Recipient</string>
               </property>
              </column>
             </widget>
@@ -218,14 +218,17 @@
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
-         <widget class="QLabel" name="label_pending_phone_number">
+         <widget class="QLabel" name="label_pending_recipient">
           <property name="text">
-           <string>To: {phone_number}</string>
+           <string>To: {contact_info}</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QPlainTextEdit" name="label_pending_message">
+         <widget class="QLineEdit" name="input_pending_subject"/>
+        </item>
+        <item>
+         <widget class="QPlainTextEdit" name="input_pending_message">
           <property name="plainText">
            <string/>
           </property>
@@ -296,13 +299,13 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>670</width>
-             <height>410</height>
+             <width>739</width>
+             <height>786</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_16">
             <item>
-             <widget class="QGroupBox" name="gb0">
+             <widget class="QGroupBox" name="gb0_4">
               <property name="styleSheet">
                <string notr="true">QGroupBox { font-weight: bold; }</string>
               </property>
@@ -312,109 +315,393 @@
               <property name="checkable">
                <bool>false</bool>
               </property>
-              <layout class="QVBoxLayout" name="verticalLayout_7">
+              <layout class="QVBoxLayout" name="verticalLayout_13">
                <item>
-                <widget class="QGroupBox" name="gb1_6">
-                 <property name="title">
-                  <string/>
+                <spacer name="horizontalSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
                  </property>
-                 <property name="flat">
-                  <bool>true</bool>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
                  </property>
-                 <layout class="QHBoxLayout" name="horizontalLayout_35">
-                  <item>
-                   <widget class="QGroupBox" name="group_lyrics_cfg_only_synced_7">
-                    <property name="title">
-                     <string/>
-                    </property>
-                    <layout class="QHBoxLayout" name="horizontalLayout_53">
-                     <item>
-                      <widget class="QLabel" name="lb_illegal_character_replacement_6">
-                       <property name="text">
-                        <string>Your Telus Phone Number</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLineEdit" name="label_settings_personal_telus_number">
-                       <property name="text">
-                        <string/>
-                       </property>
-                       <property name="placeholderText">
-                        <string>Must be formatted as 416-234-5678</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
+                </spacer>
                </item>
                <item>
-                <widget class="QGroupBox" name="gb1_4">
-                 <property name="title">
-                  <string/>
-                 </property>
-                 <property name="flat">
-                  <bool>true</bool>
-                 </property>
-                 <layout class="QHBoxLayout" name="horizontalLayout_32">
-                  <item>
-                   <widget class="QGroupBox" name="group_lyrics_cfg_only_synced_3">
-                    <property name="title">
-                     <string/>
-                    </property>
-                    <layout class="QHBoxLayout" name="horizontalLayout_48">
-                     <item>
-                      <widget class="QLabel" name="lb_illegal_character_replacement">
-                       <property name="text">
-                        <string>Telus Token</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLineEdit" name="label_settings_token"/>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="label">
+                <widget class="QLabel" name="label_5">
                  <property name="text">
-                  <string>Available Variables: {name}, {phone_number}</string>
+                  <string>Available Variables: {name}, {contact_info}, {month}, {year}, {weekday}</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QGroupBox" name="gb1_10">
+                <widget class="QGroupBox" name="gb1_24">
                  <property name="title">
                   <string/>
                  </property>
                  <property name="flat">
                   <bool>true</bool>
                  </property>
-                 <layout class="QHBoxLayout" name="horizontalLayout_39">
+                 <layout class="QHBoxLayout" name="horizontalLayout_89">
                   <item>
-                   <widget class="QGroupBox" name="group_lyrics_cfg_only_synced_6">
+                   <widget class="QGroupBox" name="group_lyrics_cfg_only_synced_38">
                     <property name="title">
                      <string/>
                     </property>
-                    <layout class="QHBoxLayout" name="horizontalLayout_50">
+                    <layout class="QHBoxLayout" name="horizontalLayout_90">
                      <item>
-                      <widget class="QLabel" name="lb_illegal_character_replacement_2">
+                      <widget class="QLabel" name="lb_illegal_character_replacement_36">
+                       <property name="text">
+                        <string>Subject</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="input_template_subject">
+                       <property name="text">
+                        <string>Hi {name}!</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QGroupBox" name="gb1_22">
+                 <property name="title">
+                  <string/>
+                 </property>
+                 <property name="flat">
+                  <bool>true</bool>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_78">
+                  <item>
+                   <widget class="QGroupBox" name="group_lyrics_cfg_only_synced_31">
+                    <property name="title">
+                     <string/>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_79">
+                     <item>
+                      <widget class="QLabel" name="lb_illegal_character_replacement_29">
                        <property name="text">
                         <string>Message</string>
                        </property>
                       </widget>
                      </item>
                      <item>
-                      <widget class="QPlainTextEdit" name="label_settings_message">
+                      <widget class="QPlainTextEdit" name="input_template_message">
                        <property name="plainText">
                         <string>Hi {name}, I was just wondering if you were interested in commercial truck warranty?</string>
+                       </property>
+                       <property name="placeholderText">
+                        <string/>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QGroupBox" name="gb0_5">
+                 <property name="styleSheet">
+                  <string notr="true">QGroupBox { font-weight: bold; }</string>
+                 </property>
+                 <property name="title">
+                  <string>Ringcentral / Telus</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>false</bool>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_19">
+                  <item>
+                   <spacer name="horizontalSpacer_3">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QGroupBox" name="gb1_27">
+                    <property name="title">
+                     <string/>
+                    </property>
+                    <property name="flat">
+                     <bool>true</bool>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_94">
+                     <item>
+                      <widget class="QGroupBox" name="group_lyrics_cfg_only_synced_11">
+                       <property name="title">
+                        <string/>
+                       </property>
+                       <layout class="QHBoxLayout" name="horizontalLayout_56">
+                        <item>
+                         <widget class="QLabel" name="lb_illegal_character_replacement_9">
+                          <property name="text">
+                           <string>Token</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="input_ringcentral_token"/>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QGroupBox" name="gb1_26">
+                    <property name="title">
+                     <string/>
+                    </property>
+                    <property name="flat">
+                     <bool>true</bool>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_92">
+                     <item>
+                      <widget class="QGroupBox" name="group_lyrics_cfg_only_synced_10">
+                       <property name="title">
+                        <string/>
+                       </property>
+                       <layout class="QHBoxLayout" name="horizontalLayout_55">
+                        <item>
+                         <widget class="QLabel" name="lb_illegal_character_replacement_8">
+                          <property name="text">
+                           <string>Client ID</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="input_ringcentral_client_id"/>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QGroupBox" name="group_lyrics_cfg_only_synced_3">
+                       <property name="title">
+                        <string/>
+                       </property>
+                       <layout class="QHBoxLayout" name="horizontalLayout_48">
+                        <item>
+                         <widget class="QLabel" name="lb_illegal_character_replacement">
+                          <property name="text">
+                           <string>Client Secret</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="input_ringcentral_client_secret"/>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QGroupBox" name="gb1_25">
+                    <property name="title">
+                     <string/>
+                    </property>
+                    <property name="flat">
+                     <bool>true</bool>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_91">
+                     <item>
+                      <widget class="QGroupBox" name="group_lyrics_cfg_only_synced_9">
+                       <property name="title">
+                        <string/>
+                       </property>
+                       <layout class="QHBoxLayout" name="horizontalLayout_54">
+                        <item>
+                         <widget class="QLabel" name="lb_illegal_character_replacement_7">
+                          <property name="text">
+                           <string>JWT</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="input_ringcentral_jwt"/>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QGroupBox" name="group_lyrics_cfg_only_synced_7">
+                       <property name="title">
+                        <string/>
+                       </property>
+                       <layout class="QHBoxLayout" name="horizontalLayout_53">
+                        <item>
+                         <widget class="QLabel" name="lb_illegal_character_replacement_6">
+                          <property name="text">
+                           <string>Your Telus Phone Number</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="input_ringcentral_phone_number">
+                          <property name="text">
+                           <string/>
+                          </property>
+                          <property name="placeholderText">
+                           <string/>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="gb0_3">
+              <property name="styleSheet">
+               <string notr="true">QGroupBox { font-weight: bold; }</string>
+              </property>
+              <property name="title">
+               <string>SMTP</string>
+              </property>
+              <property name="checkable">
+               <bool>false</bool>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_11">
+               <item>
+                <spacer name="horizontalSpacer_2">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QGroupBox" name="gb1_17">
+                 <property name="title">
+                  <string/>
+                 </property>
+                 <property name="flat">
+                  <bool>true</bool>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_45">
+                  <item>
+                   <widget class="QGroupBox" name="group_lyrics_cfg_only_synced_22">
+                    <property name="title">
+                     <string/>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_67">
+                     <item>
+                      <widget class="QLabel" name="lb_illegal_character_replacement_20">
+                       <property name="text">
+                        <string>Email</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="input_smtp_email"/>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QGroupBox" name="group_lyrics_cfg_only_synced_23">
+                    <property name="title">
+                     <string/>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_68">
+                     <item>
+                      <widget class="QLabel" name="lb_illegal_character_replacement_21">
+                       <property name="text">
+                        <string>Password</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="input_smtp_password"/>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QGroupBox" name="gb1_18">
+                 <property name="title">
+                  <string/>
+                 </property>
+                 <property name="flat">
+                  <bool>true</bool>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_46">
+                  <item>
+                   <widget class="QGroupBox" name="group_lyrics_cfg_only_synced_24">
+                    <property name="title">
+                     <string/>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_69">
+                     <item>
+                      <widget class="QLabel" name="lb_illegal_character_replacement_22">
+                       <property name="text">
+                        <string>Server</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="input_smtp_server_url">
+                       <property name="text">
+                        <string>smtp.office365.com</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QGroupBox" name="group_lyrics_cfg_only_synced_25">
+                    <property name="title">
+                     <string/>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_70">
+                     <item>
+                      <widget class="QLabel" name="lb_illegal_character_replacement_23">
+                       <property name="text">
+                        <string>Port</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="input_smtp_server_port">
+                       <property name="text">
+                        <string>587</string>
                        </property>
                        <property name="placeholderText">
                         <string/>

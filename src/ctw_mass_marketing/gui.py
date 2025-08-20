@@ -8,7 +8,7 @@ from .qt.mainui import MainWindow
 
 def main():
     app = QApplication(sys.argv)
-
+    app.setStyle("fusion")
     window = MainWindow()
     app.exec()
     os._exit(0)

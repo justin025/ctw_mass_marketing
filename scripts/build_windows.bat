@@ -7,11 +7,11 @@ if /i "%FOLDER_NAME%"=="scripts" (
     cd ..
 )
 
-echo ========= ringcentral_mass_sms Windows Build Script =========
+echo ========= ctw_mass_marketing Windows Build Script =========
 
 
 echo =^> Cleaning up previous builds...
-del /F /Q /A dist\ringcentral_mass_sms_win_executable.exe
+del /F /Q /A dist\ctw_mass_marketing_win_executable.exe
 
 
 echo =^> Creating virtual environment...
@@ -29,10 +29,10 @@ pip install -r requirements.txt
 
 echo =^> Running PyInstaller to create .exe package...
 pyinstaller --onefile --noconsole --noconfirm ^
-    --add-data="src/ringcentral_mass_sms/qt/qtui/*.ui;ringcentral_mass_sms/qt/qtui" ^
-    --add-data="src/ringcentral_mass_sms/resources/icons/*.png;ringcentral_mass_sms/resources/icons" ^
-    --paths="src/ringcentral_mass_sms" ^
-    --name="ringcentral_mass_sms" ^
+    --add-data="src/ctw_mass_marketing/qt/qtui/*.ui;ctw_mass_marketing/qt/qtui" ^
+    --add-data="src/ctw_mass_marketing/resources/icons/*.png;ctw_mass_marketing/resources/icons" ^
+    --paths="src/ctw_mass_marketing" ^
+    --name="ctw_mass_marketing" ^
     src\portable.py
 
 
@@ -41,4 +41,4 @@ del /F /Q *.spec
 rmdir /s /q build __pycache__ ffbin_win venvwin
 
 
-echo =^> Done! Executable available as 'dist/ringcentral_mass_sms.exe'.
+echo =^> Done! Executable available as 'dist/ctw_mass_marketing.exe'.
