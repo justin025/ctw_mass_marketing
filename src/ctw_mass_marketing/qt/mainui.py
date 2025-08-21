@@ -11,7 +11,7 @@ from datetime import datetime
 from PyQt6 import uic, QtGui
 from PyQt6.QtCore import QThread, QDir, Qt, pyqtSignal, QObject, QTimer
 from PyQt6.QtGui import QIcon, QColor
-from PyQt6.QtWidgets import QFileDialog, QColorDialog, QMainWindow, QMessageBox, QAbstractItemView
+from PyQt6.QtWidgets import QFileDialog, QColorDialog, QMainWindow, QMessageBox, QAbstractItemView, QTableWidgetItem
 from .settings import load_config, save_config, reset_config
 from ..api.ringcentral import ringcentral_get_token, ringcentral_send_sms
 from ..api.smtp import smtp_send_email
